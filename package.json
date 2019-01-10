@@ -1,0 +1,16 @@
+{
+  "name": "ngx-upload-kit",
+  "version": "0.0.4",
+  "description": "upload component",
+  "author": "memokit.me",
+  "homepage": "https://github.com/memokit/ngx-upload-kit.git",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/memokit/ngx-upload-kit.git"
+  },
+  "peerDependencies": {
+    "@angular/common": "^7.0.0",
+    "@angular/core": "^7.0.0"
+  }
+}

@@ -1,0 +1,33 @@
+<div class="ngx-upload-kit">
+  <div>
+    <input #fileInput type="file" (change)="onFileChange(fileInput)" class="file-input">
+  </div>
+  <div class="input-box" (click)="onSelectFile()">
+    <div class="input-caption">
+      <span *ngIf="selectedFile.length === 0">Choose files to upload</span>
+      <span *ngIf="selectedFile.length === 1">1 file was chosen</span>
+      <span *ngIf="selectedFile.length > 1">{{selectedFile.length}} files were chosen</span>
+    </div>
+    <div  class="input-button">
+      <span>Select a file...</span>
+    </div>
+  </div>
+
+  <div *ngFor="let item of selectedFile; let i = index" class="file-box">
+    <div class="file-thumbnail d-flex align-items-center">
+      <img [src]="item?.src" class="img-fluid">
+    </div>
+    <div class="file-title">
+      <div class="title">{{item.file.name}}</div>
+      <span>{{item.file.size / 1000}} KB</span>
+    </div>
+    <div class="file-actions">
+
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center upload-button">
+    <button type="button" (click)="startUpload()" class="btn btn-primary"  >upload</button>
+  </div>
+
+</div>

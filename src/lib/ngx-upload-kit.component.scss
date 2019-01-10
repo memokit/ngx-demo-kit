@@ -1,0 +1,113 @@
+.ngx-upload-kit {
+
+  display: block;
+  width: 100%;
+  padding: 16px;
+  background: #fafbfd;
+  border-radius: 6px;
+  line-height: normal;
+
+  > div {
+    >.file-input {
+      display: none;
+    }
+  }
+
+  > .input-box  {
+
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    overflow: hidden;
+
+    >.input-caption {
+      position: relative;
+      display: inline-block;
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      -ms-flex-item-align: start;
+      align-self: flex-start;
+      padding: 11px 16px;
+      margin-right: 16px;
+      background: #fff;
+      border: 1px solid #ebeef1;
+      border-radius: 6px;
+      color: #789BEC;
+      font-weight: 700;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    >.input-button {
+      display: inline-block;
+      padding: 12px 18px;
+      background: #39D2B4;
+      color: #fff;
+      font-size: 1em;
+      transition: all .4s;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  }
+
+  > .file-box {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    z-index: 2;
+    margin: 15px 5px;
+
+    > .file-thumbnail {
+      position: relative;
+      width: 36px;
+      height: 36px;
+      max-height: 36px;
+      overflow: hidden;
+      border-radius: 6px;
+
+      > img {
+        border-radius: 6px;
+      }
+    }
+
+    > .file-title {
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      padding-left: 16px;
+      padding-right: 16px;
+      color: #74809D;
+      overflow: hidden;
+
+      > div.title {
+        width: 100%;
+        font-weight: 700;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      > span {
+        font-size: 12px;
+        color: #979fb8;
+      }
+    }
+
+    > .file-actions {
+      margin: 0 16px;
+    }
+  }
+
+  > .upload-button {
+    margin-top: 50px;
+  }
+}
