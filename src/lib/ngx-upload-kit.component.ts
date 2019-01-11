@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, EventEmitter, Output, Input, Inject, ViewChild, ElementRef } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-
+import * as _ from "lodash";
 class FileSnippet {
   constructor(public src: string, public file: File) {}
 }
@@ -28,32 +28,52 @@ export class NgxUploadKitComponent implements OnInit {
   @ViewChild("fileInput") fileInput: ElementRef;
   @Output("onUpload") onUploadEmit: EventEmitter<any> = new EventEmitter<any>();
   @Input("multiple")  multiple: boolean = false;
-  private file: File;
+  @Input("accept")  accept: string = "*";
+
   public selectedFile: FileSnippet[] = [];
 
   /////////////// End Variable ////////////////
 
 
   public onFileChange(fileInput) {
-    this.file = fileInput.files[0];
+    let fileList: FileList = fileInput.files
 
-    const fileReader: FileReader = new FileReader();
 
-    fileReader.readAsDataURL(this.file);
-    fileReader.addEventListener('load', (event: any) => {
 
-      if(this.multiple){
-        this.selectedFile.push(new FileSnippet(event.target.result, this.file)) ;
-      } else {
-        this.selectedFile[0] = new FileSnippet(event.target.result, this.file)
+    for(let i = 0; i < fileList.length; i++){
+      let file: File = fileList.item(i)
+      const fileReader: FileReader = new FileReader();
+
+      let isExistExtension = this.isExistExtension(file.type);
+
+      if(isExistExtension){
+        fileReader.readAsDataURL(file);
+        fileReader.addEventListener('load', (event: any) => {
+
+          if(this.multiple){
+            this.selectedFile.push(new FileSnippet(event.target.result, file)) ;
+          } else {
+            this.selectedFile[0] = new FileSnippet(event.target.result, file)
+          }
+        });
       }
+    }
+
+  }
+
+  private isExistExtension(fileTypeSelected: string) : boolean {
+
+    let fileTypeList: string[] = _.split(fileTypeSelected, '/');
+    let fileType = "." + fileTypeList[1];
+
+    let extensionList: string[] = _.split(this.accept, ',');
+
+    extensionList = _.map(extensionList, _.trim);
 
 
-      console.log("reader");
-      console.log(this.selectedFile);
-      console.log("#####################");
+    let index = _.findIndex(extensionList, (etn) => { return etn === fileType; });
 
-    });
+    return index >= 0? true : false;
 
   }
 

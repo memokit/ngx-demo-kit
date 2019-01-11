@@ -1,7 +1,7 @@
 {
   "name": "ngx-upload-kit",
-  "version": "0.0.4",
-  "description": "upload component",
+  "version": "0.0.5",
+  "description": "Angular upload file is beta and currently in development, which supports angular version 7",
   "author": "memokit.me",
   "homepage": "https://github.com/memokit/ngx-upload-kit.git",
   "license": "MIT",
@@ -9,8 +9,22 @@
     "type": "git",
     "url": "https://github.com/memokit/ngx-upload-kit.git"
   },
+  "deprecated": false,
+  "readme": "README.md",
+  "keywords": [
+    "angular",
+    "file upload",
+    "upload",
+    "uploader",
+    "ng",
+    "angular 7",
+    "universal",
+    "img",
+    "image upload"
+  ],
   "peerDependencies": {
     "@angular/common": "^7.0.0",
-    "@angular/core": "^7.0.0"
+    "@angular/core": "^7.0.0",
+    "lodash": "^4.17.11"
   }
 }

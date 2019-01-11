@@ -1,6 +1,11 @@
 <div class="ngx-upload-kit">
   <div>
-    <input #fileInput type="file" (change)="onFileChange(fileInput)" class="file-input">
+    <ng-container *ngIf="multiple">
+        <input #fileInput type="file" (change)="onFileChange(fileInput)" multiple="multiple" [accept]="accept" class="file-input">
+    </ng-container>
+    <ng-container *ngIf="!multiple">
+        <input #fileInput type="file" (change)="onFileChange(fileInput)" [accept]="accept" class="file-input">
+    </ng-container>
   </div>
   <div class="input-box" (click)="onSelectFile()">
     <div class="input-caption">
