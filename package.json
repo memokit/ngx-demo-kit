@@ -1,6 +1,6 @@
 {
   "name": "ngx-upload-kit",
-  "version": "0.0.5",
+  "version": "0.0.8",
   "description": "Angular upload file is beta and currently in development, which supports angular version 7",
   "author": "memokit.me",
   "homepage": "https://github.com/memokit/ngx-upload-kit.git",

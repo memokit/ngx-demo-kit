@@ -20,7 +20,7 @@
 
   <div *ngFor="let item of selectedFile; let i = index" class="file-box">
     <div class="file-thumbnail d-flex align-items-center">
-      <img [src]="item?.src" class="img-fluid">
+      <img [src]="getImage(item)" class="img-fluid">
     </div>
     <div class="file-title">
       <div class="title">{{item.file.name}}</div>
