@@ -10,7 +10,6 @@
     "url": "https://github.com/memokit/ngx-upload-kit.git"
   },
   "deprecated": false,
-  "readme": "README.md",
   "keywords": [
     "angular",
     "file upload",
